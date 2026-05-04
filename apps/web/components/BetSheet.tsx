@@ -26,6 +26,7 @@ export function BetSheet({ ticker, side, onClose }: Props) {
   const maxPayout = contracts; // in dollars
 
   async function place() {
+    if (!market) return;
     setStatus("loading");
     try {
       const res = await fetch("/api/orders", {
