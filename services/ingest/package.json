@@ -1,0 +1,17 @@
+{
+  "name": "ingest",
+  "private": true,
+  "scripts": {
+    "dev": "bun --watch worker.ts",
+    "start": "bun worker.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.55.0",
+    "fast-xml-parser": "^4.4.0",
+    "ioredis": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

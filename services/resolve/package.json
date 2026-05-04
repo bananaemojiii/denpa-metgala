@@ -1,0 +1,17 @@
+{
+  "name": "resolve",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch worker.ts",
+    "start": "bun worker.ts"
+  },
+  "dependencies": {
+    "ioredis": "^5.4.1",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

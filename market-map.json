@@ -1,0 +1,20 @@
+{
+  "_comment": "Map lowercase keywords to Kalshi market tickers. Replace tickers with real slugs from Kalshi dashboard.",
+
+  "zendaya":        "METGALA26-ZENDAYA-LOEWE",
+  "loewe":          "METGALA26-ZENDAYA-LOEWE",
+  "rihanna":        "METGALA26-RIHANNA-APPEAR",
+  "valentino":      "METGALA26-VALENTINO-CARPET",
+  "best dressed":   "METGALA26-BEST-DRESSED",
+  "best-dressed":   "METGALA26-BEST-DRESSED",
+  "couple":         "METGALA26-SURPRISE-COUPLE",
+  "engaged":        "METGALA26-SURPRISE-COUPLE",
+  "proposal":       "METGALA26-SURPRISE-COUPLE",
+  "theme":          "METGALA26-THEME-LITERAL",
+  "vintage":        "METGALA26-THEME-LITERAL",
+  "beyonce":        "METGALA26-BEST-DRESSED",
+  "lady gaga":      "METGALA26-BEST-DRESSED",
+  "dua lipa":       "METGALA26-BEST-DRESSED",
+  "bad bunny":      "METGALA26-BEST-DRESSED",
+  "kim kardashian": "METGALA26-VALENTINO-CARPET"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "denpa-metgala",
+  "private": true,
+  "workspaces": ["apps/*", "services/*"],
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter web dev\" \"pnpm --filter ingest dev\" \"pnpm --filter resolve dev\"",
+    "web": "pnpm --filter web dev",
+    "ingest": "pnpm --filter ingest dev",
+    "resolve": "pnpm --filter resolve dev",
+    "build": "pnpm --filter web build",
+    "typecheck": "tsc --noEmit -p apps/web/tsconfig.json && tsc --noEmit -p services/ingest/tsconfig.json"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "typescript": "^5.5.0"
+  }
+}
