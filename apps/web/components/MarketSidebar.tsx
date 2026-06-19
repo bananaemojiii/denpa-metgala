@@ -9,6 +9,7 @@ import { KalshiWS } from "@/lib/kalshi-ws";
 import { useFillSync } from "@/lib/fill-sync";
 import { MarketCard } from "./MarketCard";
 import { Leaderboard } from "./Leaderboard";
+import { MarketChatSurface } from "./MarketChatSurface";
 import { METGALA_MARKETS } from "@/stores/markets";
 import type { ResolutionEvent } from "@/app/api/admin/resolve/route";
 
@@ -16,7 +17,7 @@ interface Props {
   onBet: (ticker: string, side: "yes" | "no") => void;
 }
 
-type Tab = "markets" | "leaders";
+type Tab = "markets" | "leaders" | "chat";
 
 export function MarketSidebar({ onBet }: Props) {
   const [tab, setTab] = useState<Tab>("markets");
@@ -96,7 +97,7 @@ export function MarketSidebar({ onBet }: Props) {
       <div className="flex items-center justify-between px-3 py-2 text-xs shrink-0"
         style={{ borderBottom: "1px solid var(--border)" }}>
         <div className="flex gap-3">
-          {(["markets", "leaders"] as Tab[]).map((t) => (
+          {(["markets", "leaders", "chat"] as Tab[]).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
@@ -117,15 +118,17 @@ export function MarketSidebar({ onBet }: Props) {
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto">
-        {tab === "markets" ? (
+        {tab === "markets" && (
           <div className="space-y-2 p-2">
             {sorted.map((m) => (
               <MarketCard key={m.ticker} market={m} onBet={onBet} />
             ))}
           </div>
-        ) : (
-          <Leaderboard />
         )}
+        {tab === "leaders" && <Leaderboard />}
+        {/* Chat: inline panel on desktop, full-height sheet on mobile.
+            On mobile the sheet covers the screen; closing returns to markets. */}
+        {tab === "chat" && <MarketChatSurface onClose={() => setTab("markets")} />}
       </div>
     </aside>
   );
